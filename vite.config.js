@@ -23,7 +23,9 @@ const cleanUrls = () => ({
   }
 });
 
+// GitHub Pages kabi sub-yo‘lda joylash uchun: BASE_PATH=/polaris-react/
 export default defineConfig({
+  base: process.env.BASE_PATH || '/',
   plugins: [react(), cleanUrls()],
   build: { cssCodeSplit: false },
   // react-helmet-async CommonJS paket — prerender uchun SSR bundle ichiga olinadi

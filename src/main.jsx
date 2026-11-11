@@ -8,7 +8,7 @@ import './styles/global.css';
 const app = (
   <StrictMode>
     <HelmetProvider>
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <App />
       </BrowserRouter>
     </HelmetProvider>

@@ -6,11 +6,13 @@ import App from './App.jsx';
 export { ROUTES, DISALLOW } from './routes.js';
 export { SITE } from './seo/site.js';
 
+const BASENAME = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 export function render(url) {
   const helmetContext = {};
   const html = renderToString(
     <HelmetProvider context={helmetContext}>
-      <StaticRouter location={url} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <StaticRouter basename={BASENAME} location={BASENAME + url} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <App />
       </StaticRouter>
     </HelmetProvider>
