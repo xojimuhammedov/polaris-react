@@ -1,0 +1,14 @@
+{
+  "name": "Polaris Guides School",
+  "short_name": "Polaris",
+  "lang": "uz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4EFE4",
+  "theme_color": "#12142A",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
