@@ -2,7 +2,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import Seo from '../seo/Seo.jsx';
 import Icon from '../components/Icon.jsx';
 import AuthLayout, { PhoneField, PasswordField } from '../components/AuthLayout.jsx';
-import Steps from '../components/Steps.jsx';
 
 const PERKS = [
   { icon: 'play', title: 'Boshlang‘ich mini-kurs', desc: 'Gidlikka birinchi qadam' },
@@ -14,9 +13,8 @@ export default function Register() {
   const navigate = useNavigate();
   const onSubmit = (e) => {
     e.preventDefault();
-    const phone = new FormData(e.currentTarget).get('phone') || '';
-    // TODO: API orqali ro‘yxatdan o‘tkazish va SMS yuborish
-    navigate('/tasdiqlash', { state: { phone } });
+    // TODO: API orqali ro‘yxatdan o‘tkazish
+    navigate('/kabinet');
   };
 
   return (
@@ -35,11 +33,9 @@ export default function Register() {
         note="To‘liq kurs, topshiriqlar, ustoz fikri va AI mashqlari — kurs o‘quvchilari uchun."
       >
         <form className="auth-form" aria-labelledby="royxat-title" onSubmit={onSubmit} style={{ gap: 20 }}>
-          <Steps current={1} />
-
           <div className="auth-form__head">
             <h1 id="royxat-title" className="auth-form__title">Ro‘yxatdan o‘tish</h1>
-            <p className="auth-form__sub">Bir daqiqa vaqt oladi. Telefon raqamingizga tasdiqlash kodi yuboriladi.</p>
+            <p className="auth-form__sub">Bir daqiqa vaqt oladi.</p>
           </div>
 
           <div className="two-cols">
@@ -68,7 +64,7 @@ export default function Register() {
           </label>
 
           <button type="submit" className="btn btn--lg btn--accent btn--block">
-            Davom etish <Icon name="arrowRight" size={18} strokeWidth={1.8} />
+            Ro‘yxatdan o‘tish <Icon name="arrowRight" size={18} strokeWidth={1.8} />
           </button>
 
           <p className="fs-15 muted" style={{ margin: 0, textAlign: 'center' }}>

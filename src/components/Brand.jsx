@@ -57,13 +57,13 @@ export function StarTrails({ variant = 'hero', className }) {
   const scale = size / 1600;
   return (
     <svg className={`trails ${className || ''}`} aria-hidden="true" viewBox={`0 0 ${size} ${size}`}>
-      <g fill="none" stroke="#C9B98A" strokeLinecap="round">
+      <g className="trails__rings" fill="none" strokeLinecap="round">
         {RINGS[variant].map(([r, o, d]) => (
           <circle key={r} cx={c} cy={c} r={r} strokeOpacity={o} strokeDasharray={d} />
         ))}
       </g>
       {variant !== 'cta' && (
-        <g fill="#F4EFE4">
+        <g className="trails__stars">
           {STARS.slice(0, variant === 'panel' ? 12 : STARS.length).map(([x, y, r], i) => (
             <circle key={i} cx={x * scale} cy={y * scale} r={r} fillOpacity={0.45 + (i % 4) * 0.05} />
           ))}

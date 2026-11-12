@@ -20,14 +20,14 @@ export default function SiteFooter() {
           </div>
 
           <nav className="footer__col" aria-label="Platforma">
-            <span className="kicker kicker--gold">Platforma</span>
+            <span className="kicker">Platforma</span>
             {NAV_LINKS.slice(1).map((l) => (
               <Link key={l.label} to={l.href}>{l.label}</Link>
             ))}
           </nav>
 
           <nav className="footer__col" aria-label="O‘quvchilar">
-            <span className="kicker kicker--gold">O‘quvchilar</span>
+            <span className="kicker">O‘quvchilar</span>
             <Link to="/kirish">Shaxsiy kabinet</Link>
             <Link to="/kabinet/dars">AI yordamchi</Link>
             <a href="#">Hamjamiyat «Aylana»</a>
@@ -35,7 +35,7 @@ export default function SiteFooter() {
           </nav>
 
           <address className="footer__col footer__col--wide" style={{ fontStyle: 'normal' }}>
-            <span className="kicker kicker--gold">Aloqa</span>
+            <span className="kicker">Aloqa</span>
             <span>[Telefon raqam]</span>
             <span>[Email]</span>
             <span>[O‘quv markazi manzili]</span>

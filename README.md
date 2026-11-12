@@ -25,7 +25,6 @@ VITE_SITE_URL=https://sizning-domen.uz
 | `/` | Bosh sahifa | ✅ |
 | `/kirish` | Kabinetga kirish | ✅ |
 | `/royxat` | Ro‘yxatdan o‘tish | ✅ |
-| `/tasdiqlash` | SMS tasdiqlash | ❌ noindex |
 | `/kabinet` | Mening kurslarim | ❌ noindex |
 | `/kabinet/kurs` | Kurs ichi — modullar va darslar | ❌ noindex |
 | `/kabinet/dars` | Dars sahifasi | ❌ noindex |
@@ -63,5 +62,5 @@ error_page 404 /404.html;
 
 - `[sana]`, `[Ism Familiya]`, `[Telefon raqam]` kabi joy egalari — haqiqiy ma’lumotlar bilan.
 - Ijtimoiy tarmoq havolalari (`SiteFooter.jsx`) va `schema.js` dagi `sameAs`.
-- Formalar (`Home.jsx` ariza, `Login`, `Register`, `Verify`) va AI chat — hozircha demo, `TODO` izohlari bor joyda API’ga ulanadi.
+- Formalar (`Home.jsx` ariza, `Login`, `Register`) va AI chat — hozircha demo, `TODO` izohlari bor joyda API’ga ulanadi.
 - Rasm va video muqovalari hozir chiziqli placeholder.

@@ -46,12 +46,12 @@ export default function Lesson() {
           <StarMark size={26} double={false} />
           <span className="sc">Polaris</span>
         </Link>
-        <Link to="/kabinet/kurs" className="btn btn--ghost" style={{ height: 44, padding: '3px 16px 0 12px', gap: 8, fontWeight: 400 }}>
+        <Link to="/kabinet/kurs" className="btn btn--outline" style={{ height: 44, padding: '0 16px 0 12px', gap: 8, fontWeight: 500 }}>
           <Icon name="arrowLeft" size={16} strokeWidth={1.8} />Kursga qaytish
         </Link>
         <div className="lesson-top__progress">
           <div><span>{COURSE.title}</span><span>{COURSE.progress}% o‘zlashtirildi</span></div>
-          <Bar value={COURSE.progress} accent dark className="bar--thin" label="Kurs o‘zlashtirilishi" />
+          <Bar value={COURSE.progress} accent className="bar--thin" label="Kurs o‘zlashtirilishi" />
         </div>
         <Link to="/kabinet" className="avatar avatar--44" aria-label="Shaxsiy kabinet">{USER.initials}</Link>
       </header>

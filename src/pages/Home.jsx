@@ -54,7 +54,7 @@ export default function Home() {
               <span className="btn-hero__label">Kurs bilan tanishish</span>
               <span className="btn-hero__icon" aria-hidden="true"><Icon name="arrowRight" size={18} strokeWidth={1.8} /></span>
             </a>
-            <a href="#bepul-dars" className="btn btn--lg btn--ghost">Bepul materiallarni ko‘rish</a>
+            <a href="#bepul-dars" className="btn btn--lg btn--outline">Bepul materiallarni ko‘rish</a>
           </div>
         </div>
       </header>
@@ -337,10 +337,10 @@ function Apply() {
       <StarTrails variant="cta" className="apply__trails" />
       <div className="container apply__inner">
         <div className="apply__copy">
-          <span className="eyebrow eyebrow--gold"><Icon name="star" />Ariza</span>
+          <span className="eyebrow"><Icon name="star" />Ariza</span>
           <h2 id="ariza-title" className="display-2">Keyingi guruhga yoki ochiq darsga yoziling</h2>
-          <p className="lead lead--dark">Ariza qoldiring — kurs sharoitlari, narx va jadval bo‘yicha siz bilan bog‘lanamiz.</p>
-          <dl className="dl dl--lg" style={{ marginTop: 8 }}>
+          <p className="lead">Ariza qoldiring — kurs sharoitlari, narx va jadval bo‘yicha siz bilan bog‘lanamiz.</p>
+          <dl className="dl dl--lg dl--light" style={{ marginTop: 8 }}>
             <div><dt>Keyingi guruh</dt><dd className="serif">[sana]</dd></div>
             <div><dt>Ochiq dars</dt><dd className="serif">[sana, vaqt]</dd></div>
             <div><dt>To‘lov</dt><dd>Click · Payme — to‘liq yoki bo‘lib</dd></div>

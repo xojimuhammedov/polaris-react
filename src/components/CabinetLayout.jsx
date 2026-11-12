@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Icon from './Icon.jsx';
 import { Logo } from './Brand.jsx';
 import { USER } from '../data/course.js';
@@ -10,10 +10,13 @@ const ITEMS = [
   { to: '#', icon: 'calendar', label: 'Jadval' },
   { to: '/kabinet/dars', icon: 'sparkle', label: 'AI yordamchi' },
   { to: '#', icon: 'card', label: 'To‘lovlar' },
-  { to: '#', icon: 'settings', label: 'Sozlamalar' }
+  { to: '/kabinet/profil', icon: 'user', label: 'Profil', nav: true }
 ];
 
 export default function CabinetLayout({ children, gap = 28 }) {
+  const { pathname } = useLocation();
+  // Kurs va dars sahifalarida ham "Mening kurslarim" faol turadi, profil sahifasida esa yo‘q
+  const coursesActive = pathname === '/kabinet' || pathname.startsWith('/kabinet/kurs') || pathname.startsWith('/kabinet/dars');
   return (
     <div className="cab">
       <aside className="side" aria-label="Kabinet menyusi">
@@ -24,7 +27,11 @@ export default function CabinetLayout({ children, gap = 28 }) {
             {ITEMS.map((it) => (
               <li key={it.label}>
                 {it.match ? (
-                  // Kurs va dars sahifalarida ham "Mening kurslarim" faol turadi
+                  <Link to={it.to} className={`side__link ${coursesActive ? 'active' : ''}`} aria-current={coursesActive ? 'page' : undefined}>
+                    <Icon name={it.icon} size={20} strokeWidth={1.6} />
+                    {it.label}
+                  </Link>
+                ) : it.nav ? (
                   <NavLink to={it.to} className={({ isActive }) => `side__link ${isActive ? 'active' : ''}`}>
                     <Icon name={it.icon} size={20} strokeWidth={1.6} />
                     {it.label}
@@ -42,11 +49,13 @@ export default function CabinetLayout({ children, gap = 28 }) {
         </nav>
 
         <div className="side__foot">
-          <span className="avatar" aria-hidden="true">{USER.initials}</span>
-          <span className="side__user">
-            <span className="side__user-name">{USER.name}</span>
-            <span className="side__user-role">{USER.role}</span>
-          </span>
+          <NavLink to="/kabinet/profil" className={({ isActive }) => `side__me ${isActive ? 'active' : ''}`} aria-label={`${USER.name} — profil`}>
+            <span className="avatar" aria-hidden="true">{USER.initials}</span>
+            <span className="side__user">
+              <span className="side__user-name">{USER.name}</span>
+              <span className="side__user-role">{USER.role}</span>
+            </span>
+          </NavLink>
           <Link to="/kirish" className="side__logout" aria-label="Chiqish">
             <Icon name="logout" size={20} strokeWidth={1.6} />
           </Link>

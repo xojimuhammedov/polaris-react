@@ -19,11 +19,11 @@ export default function AuthLayout({ eyebrow, title, emphasis, text, perks, note
         <Logo />
 
         <div className="auth__intro">
-          <span className="eyebrow eyebrow--gold">{eyebrow}</span>
+          <span className="eyebrow">{eyebrow}</span>
           <p className="auth__title">
             {title} <em>{emphasis}</em>
           </p>
-          <p className="lead lead--dark">{text}</p>
+          <p className="lead">{text}</p>
         </div>
 
         <div className="auth__perks-wrap">
@@ -87,7 +87,7 @@ export function PhoneField({ id = 'tel', value, onChange }) {
   );
 }
 
-export function PasswordField({ id = 'parol', label = 'Parol', placeholder, autoComplete, hint, aside }) {
+export function PasswordField({ id = 'parol', name = 'password', label = 'Parol', placeholder, autoComplete, hint, aside, minLength }) {
   const [shown, setShown] = useState(false);
   return (
     <div className="form-group">
@@ -98,13 +98,13 @@ export function PasswordField({ id = 'parol', label = 'Parol', placeholder, auto
       <div className="field">
         <input
           id={id}
-          name="password"
+          name={name}
           className="field__input"
           type={shown ? 'text' : 'password'}
           autoComplete={autoComplete}
           placeholder={placeholder}
           aria-describedby={hint ? `${id}-hint` : undefined}
-          minLength={hint ? 8 : undefined}
+          minLength={minLength ?? (hint ? 8 : undefined)}
           required
         />
         <button

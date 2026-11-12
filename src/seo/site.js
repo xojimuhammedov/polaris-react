@@ -8,7 +8,7 @@ export const SITE = {
   description:
     'Polaris Guides School — gidlikni o‘rganish va kasbiy rivojlanish maktabi. Videodarslar, sun’iy intellekt bilan mashq va ustoz nazoratidagi amaliyot bitta platformada.',
   ogImage: '/og-image.png',
-  themeColor: '#12142A'
+  themeColor: '#FFFFFF'
 };
 
 export const absoluteUrl = (path = '/') => SITE.url + (path.startsWith('/') ? path : '/' + path);
